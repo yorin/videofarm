@@ -34,3 +34,4 @@ class YoutubeSpider(scrapy.Spider):
                     itemstream['urlstream'] = stream
                     itemstreams.append(itemstream)
         return itemstreams
+

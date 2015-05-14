@@ -12,6 +12,7 @@ BOT_NAME = 'videofarm'
 
 SPIDER_MODULES = ['videofarm.spiders']
 NEWSPIDER_MODULE = 'videofarm.spiders'
+#ITEM_PIPELINES = {'scrapy.pipelines.media': 1}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'videofarm (+http://www.yourdomain.com)'

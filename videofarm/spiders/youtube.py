@@ -3,11 +3,10 @@ import scrapy
 from videofarm.items import VideofarmItem
 from scrapy.spider import BaseSpider
 import urllib
+import re
 
 #from scrapy.selector import HtmlXPathSelector
 #from scrapy.selector import Selector
-import re
-import urllib 
 """
  http://users.ohiohills.com/fmacall/ytcrack.txt
  
@@ -24,9 +23,11 @@ class YoutubeSpider(scrapy.Spider):
 
     def parse(self, response):
         itemstreams = []
+        itemstream = VideofarmItem()
+        title = response.xpath('//span[@id="eow-title"]/text()')
+        itemstream['youtubetitle'] = title.extract()[0].strip()
         link = response.xpath('//script/text()').re(r'0026url=(.*?)\\u')
         for stream in link:
-            itemstream = VideofarmItem()
             if ('mime%3Dvideo%252Fmp4') in stream:
                 stream = stream
                 if ('itag%3D18') in stream:

@@ -14,5 +14,6 @@ scrapy videofarm application
 
 
 ####Example commands:  
-https://www.youtube.com/watch?v=maKcDdweu5g  
-Youtube (_./run.sh youtube maKcDdweu5g_)
+
+Youtube link (https://www.youtube.com/watch?v=maKcDdweu5g)  
+command (_./run.sh youtube maKcDdweu5g_)

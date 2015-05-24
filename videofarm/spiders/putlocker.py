@@ -7,6 +7,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
 #http://mherman.org/blog/2012/11/08/recursively-scraping-web-pages-with-scrapy/#.VVyEv_mqqko
 #http://doc.scrapy.org/en/0.7/topics/selectors.html
+#https://github.com/mcrapet/plowshare-modules-legacy/blob/master/promptfile.sh
 
 class PutlockerSpider(scrapy.Spider):
     cfurl = 0

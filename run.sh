@@ -21,7 +21,7 @@ function curly {
    fi
  elif [ "$SPIDER" -eq 'putlocker' ]
    if [ ! -f "../downloads/$LINKTITLE" ] && [ ! -s "../downloads/$LINKTITLE" ] && [ ! -e "../downloads/$LINKTITLE" ]; then
-     curl -c cookies.txt --location "$LINKER" -a -k -o "$LIKNKTITLE" --limit-rate 56k
+     curl -c cache/cookies.txt --location "$LINKER" -a -k -o "$LIKNKTITLE" --limit-rate 56k
      exit
    else
      echo "$LINKTITLE has already been downloaded!"

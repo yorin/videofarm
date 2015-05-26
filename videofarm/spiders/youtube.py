@@ -25,7 +25,7 @@ class YoutubeSpider(scrapy.Spider):
         itemstreams = []
         itemstream = VideofarmItem()
         title = response.xpath('//span[@id="eow-title"]/text()')
-        itemstream['youtubetitle'] = title.extract()[0].strip()
+        itemstream['streamtitle'] = title.extract()[0].strip()
         link = response.xpath('//script/text()').re(r'0026url=(.*?)\\u')
         for stream in link:
             if ('mime%3Dvideo%252Fmp4') in stream:

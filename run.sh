@@ -11,7 +11,7 @@ function scraperon {
 function curly {
  LINKER=$(cat ../spiders/cache/$QUERY.json |grep -Po '"urlstream": "(.*?)"'|sed -e "s/\"//g"|sed -e "s/urlstream\: //g")
  LINKTITLE=$(cat ../spiders/cache/$QUERY.json |grep -Po '"streamtitle": "(.*?)"'|sed -e "s/\"//g" |sed -e "s/streamtitle\: //g")
- if [ "$SPIDER" -eq 'youtube']
+ if [ "$SPIDER" == 'youtube' ]; then
    if [ ! -f "../downloads/$LINKTITLE.mp4" ] && [ ! -s "../downloads/$LINKTITLE.mp4" ] && [ ! -e "../downloads/$LINKTITLE.mp4" ]; then
      curl "$LINKER" -a -k -o "../downloads/$LINKTITLE.mp4" --limit-rate 56k
      exit
@@ -19,7 +19,7 @@ function curly {
      echo "$LINKTITLE.mp4 has already been downloaded!"
      exit
    fi
- elif [ "$SPIDER" -eq 'putlocker' ]
+ elif [ "$SPIDER" == 'putlocker' ]; then
    if [ ! -f "../downloads/$LINKTITLE" ] && [ ! -s "../downloads/$LINKTITLE" ] && [ ! -e "../downloads/$LINKTITLE" ]; then
      curl -c cache/cookies.txt --location "$LINKER" -a -k -o "$LIKNKTITLE" --limit-rate 56k
      exit
